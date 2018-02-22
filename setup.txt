@@ -1,0 +1,20 @@
+TIM3
+TIM4
+
+TIM3:GPIOC
+Pin_6
+Pin_7
+Pin_8
+
+TIM4:GPIOD
+Pin_12
+Pin_13
+Pin_14
+
+USRT1:GPIOA
+PA10 RX
+PA9  TX
+
+
+timer clocks:
+35 MHz
