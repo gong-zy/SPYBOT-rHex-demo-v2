@@ -41,7 +41,7 @@ void initServos(struct Servos* s, TIM_HandleTypeDef* tim1, TIM_HandleTypeDef* ti
  * 4: tm 4 ch 2
  * 5: tm 4 ch 3
  */
-void initChannel(struct Servos* s, int channelnum);
+void initChannel(struct Servos* s, int channelnum, float percent);
 
 
 
