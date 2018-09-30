@@ -49,6 +49,18 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define MOTOR4_Pin GPIO_PIN_6
+#define MOTOR4_GPIO_Port GPIOA
+#define MOTOR5_Pin GPIO_PIN_7
+#define MOTOR5_GPIO_Port GPIOA
+#define MOTOR6_Pin GPIO_PIN_0
+#define MOTOR6_GPIO_Port GPIOB
+#define MOTOR1_Pin GPIO_PIN_12
+#define MOTOR1_GPIO_Port GPIOD
+#define MOTOR2_Pin GPIO_PIN_13
+#define MOTOR2_GPIO_Port GPIOD
+#define MOTOR3_Pin GPIO_PIN_14
+#define MOTOR3_GPIO_Port GPIOD
 #define LED_Pin GPIO_PIN_15
 #define LED_GPIO_Port GPIOD
 
