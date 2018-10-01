@@ -39,6 +39,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
+#include "motor_control.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -116,7 +117,7 @@ int main(void)
 
 
 
-  HAL_UART_Receive_IT(&huart6, command_byte, 1);
+  HAL_UART_Receive_IT(&huart6, &command_byte, 1);
 
 
 
@@ -172,6 +173,9 @@ int main(void)
 				  stop_all_motors();
 			  }
 		  }
+		  command_byte = 0;
+		  HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+
 	  }
 
   }
