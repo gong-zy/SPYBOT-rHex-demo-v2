@@ -118,6 +118,8 @@ int main(void)
 
 
   HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+  PWM_start_all();
+  stop_all_motors();
 
 
 
