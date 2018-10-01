@@ -23,27 +23,27 @@ void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
 	pulse = 8333 + (33334/100)*pulse;
 
 	switch (pwm_pin) {
-		case 1: {
+		case 0: {
 			TIM4->CCR1 = pulse;
 			break;
 		}
-		case 2: {
+		case 1: {
 			TIM4->CCR2 = pulse;
 			break;
 		}
-		case 3: {
+		case 2: {
 			TIM4->CCR3 = pulse;
 			break;
 		}
-		case 4: {
+		case 3: {
 			TIM3->CCR1 = pulse;
 			break;
 		}
-		case 5: {
+		case 4: {
 			TIM3->CCR2 = pulse;
 			break;
 		}
-		case 6: {
+		case 5: {
 			TIM3->CCR3 = pulse;
 			break;
 		}
@@ -51,6 +51,15 @@ void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
 			// invalid pwm_pin
 			break;
 		}
+	}
+}
+
+/*
+ * Brief: Stops all motors by setting the pulse with to 50%
+ */
+void stop_all_motors(void) {
+	for (int i = 0; i < 6; i++) {
+		PWM_set_pulse(i, 50);
 	}
 }
 
@@ -79,8 +88,6 @@ void PWM_stop_all(void) {
 	HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 }
-
-
 
 
 
