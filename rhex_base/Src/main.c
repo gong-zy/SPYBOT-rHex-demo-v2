@@ -83,6 +83,12 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+
+
+  uint8_t command_byte = 0;
+
+
+
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -108,6 +114,12 @@ int main(void)
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
+
+
+  HAL_UART_Receive_IT(&huart6, command_byte, 1);
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -118,6 +130,49 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+	  if (command_byte != 0) {
+		  switch (command_byte) {
+			  case 1: {						// forward
+				  PWM_set_pulse(0, 100);
+				  PWM_set_pulse(1, 100);
+				  PWM_set_pulse(2, 100);
+				  PWM_set_pulse(3, 0);
+				  PWM_set_pulse(4, 0);
+				  PWM_set_pulse(5, 0);
+				  break;
+			  }
+			  case 2: {						// backward
+				  PWM_set_pulse(0, 0);
+				  PWM_set_pulse(1, 0);
+				  PWM_set_pulse(2, 0);
+				  PWM_set_pulse(3, 100);
+				  PWM_set_pulse(4, 100);
+				  PWM_set_pulse(5, 100);
+				  break;
+			  }
+			  case 3: {						// left
+				  PWM_set_pulse(0, 100);
+				  PWM_set_pulse(1, 100);
+				  PWM_set_pulse(2, 100);
+				  PWM_set_pulse(3, 100);
+				  PWM_set_pulse(4, 100);
+				  PWM_set_pulse(5, 100);
+				  break;
+			  }
+			  case 4: {						// right
+				  PWM_set_pulse(0, 0);
+				  PWM_set_pulse(1, 0);
+				  PWM_set_pulse(2, 0);
+				  PWM_set_pulse(3, 0);
+				  PWM_set_pulse(4, 0);
+				  PWM_set_pulse(5, 0);
+				  break;
+			  }
+			  case 5: {						// stop
+				  stop_all_motors();
+			  }
+		  }
+	  }
 
   }
   /* USER CODE END 3 */
