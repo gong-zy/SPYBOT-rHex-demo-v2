@@ -10,7 +10,17 @@
  * @pulse: the puls width in percentage
  */
 void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
-	pulse = (pulse*50000)/100;
+	/*
+	 * TIM3-4 base clk is 50/3 MHz
+	 * 50 000 period is 3 ms
+	 * dt clk is 6*10e-8
+	 * 0.5 ms is 8333  tick
+	 * 2.5 ms is 41667 tick
+	 *
+	 * 0%	-> 8333
+	 * 100%	-> 41667
+	 */
+	pulse = 8333 + (33334/100)*pulse;
 
 	switch (pwm_pin) {
 		case 1: {
