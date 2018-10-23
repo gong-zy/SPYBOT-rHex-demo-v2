@@ -1,8 +1,7 @@
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * File Name          : freertos.c
+  * Description        : Code for freertos applications
   ******************************************************************************
   * This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -47,54 +46,30 @@
   ******************************************************************************
   */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H__
-#define __MAIN_H__
-
 /* Includes ------------------------------------------------------------------*/
+#include "FreeRTOS.h"
+#include "task.h"
 
-/* USER CODE BEGIN Includes */
+/* USER CODE BEGIN Includes */     
 
 /* USER CODE END Includes */
 
-/* Private define ------------------------------------------------------------*/
+/* Variables -----------------------------------------------------------------*/
 
-#define MOTOR3_Pin GPIO_PIN_6
-#define MOTOR3_GPIO_Port GPIOA
-#define MOTOR4_Pin GPIO_PIN_7
-#define MOTOR4_GPIO_Port GPIOA
-#define MOTOR5_Pin GPIO_PIN_0
-#define MOTOR5_GPIO_Port GPIOB
-#define MOTOR0_Pin GPIO_PIN_12
-#define MOTOR0_GPIO_Port GPIOD
-#define MOTOR1_Pin GPIO_PIN_13
-#define MOTOR1_GPIO_Port GPIOD
-#define MOTOR2_Pin GPIO_PIN_14
-#define MOTOR2_GPIO_Port GPIOD
-#define LED_Pin GPIO_PIN_15
-#define LED_GPIO_Port GPIOD
+/* USER CODE BEGIN Variables */
 
-/* ########################## Assert Selection ############################## */
-/**
-  * @brief Uncomment the line below to expanse the "assert_param" macro in the 
-  *        HAL drivers code
-  */
-/* #define USE_FULL_ASSERT    1U */
+/* USER CODE END Variables */
 
-/* USER CODE BEGIN Private defines */
+/* Function prototypes -------------------------------------------------------*/
 
-/* USER CODE END Private defines */
+/* USER CODE BEGIN FunctionPrototypes */
 
-#ifdef __cplusplus
- extern "C" {
-#endif
-void _Error_Handler(char *, int);
+/* USER CODE END FunctionPrototypes */
 
-#define Error_Handler() _Error_Handler(__FILE__, __LINE__)
-#ifdef __cplusplus
-}
-#endif
+/* Hook prototypes */
 
-#endif /* __MAIN_H__ */
+/* USER CODE BEGIN Application */
+     
+/* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
