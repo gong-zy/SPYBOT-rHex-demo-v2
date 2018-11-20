@@ -1,0 +1,57 @@
+Configuration	rhex_base
+STM32CubeMX 	4.26.1
+Date	11/09/2018
+MCU	STM32F407VGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	TIM1	SYS_VS_tim1	VP_SYS_VS_tim1
+TIM3	PWM Generation CH1	TIM3_CH1	PA6
+TIM3	PWM Generation CH2	TIM3_CH2	PA7
+TIM3	PWM Generation CH3	TIM3_CH3	PB0
+TIM4	PWM Generation CH1	TIM4_CH1	PD12
+TIM4	PWM Generation CH2	TIM4_CH2	PD13
+TIM4	PWM Generation CH3	TIM4_CH3	PD14
+USART6	Asynchronous	USART6_RX	PC7
+USART6	Asynchronous	USART6_TX	PC6
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+31	PA6	TIM3_CH1	MOTOR3
+32	PA7	TIM3_CH2	MOTOR4
+35	PB0	TIM3_CH3	MOTOR5
+59	PD12	TIM4_CH1	MOTOR0
+60	PD13	TIM4_CH2	MOTOR1
+61	PD14	TIM4_CH3	MOTOR2
+62	PD15	GPIO_Output	LED
+63	PC6	USART6_TX	
+64	PC7	USART6_RX	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : rhex_base
+Project Folder : C:\_workfolder\LEGO\SPYBOT-rHex-demo-v2\rhex_base
+Toolchain / IDE : SW4STM32
+Firmware Package Name and Version : STM32Cube FW_F4 V1.21.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

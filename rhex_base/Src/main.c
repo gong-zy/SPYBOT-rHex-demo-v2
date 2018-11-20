@@ -85,7 +85,74 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+void Main_Thread(void *pvParameters) {
+	uint8_t command_byte = 0;
 
+	HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+	PWM_start_all();
+	stop_all_motors();
+
+	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+	osDelay(500);
+	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+	osDelay(500);
+
+
+	while (1) {
+		if (command_byte != 0) {
+			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+			osDelay(500);
+			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+			osDelay(500);
+
+			switch (command_byte) {
+				case 1: 						// forward
+					PWM_set_pulse(0, 100);
+					PWM_set_pulse(1, 100);
+					PWM_set_pulse(2, 100);
+					PWM_set_pulse(3, 0);
+					PWM_set_pulse(4, 0);
+					PWM_set_pulse(5, 0);
+					break;
+
+				case 2: 						// backward
+					PWM_set_pulse(0, 0);
+					PWM_set_pulse(1, 0);
+					PWM_set_pulse(2, 0);
+					PWM_set_pulse(3, 100);
+					PWM_set_pulse(4, 100);
+					PWM_set_pulse(5, 100);
+					break;
+
+				case 3: 						// left
+					PWM_set_pulse(0, 100);
+					PWM_set_pulse(1, 100);
+					PWM_set_pulse(2, 100);
+					PWM_set_pulse(3, 100);
+					PWM_set_pulse(4, 100);
+					PWM_set_pulse(5, 100);
+					break;
+
+				case 4: 						// right
+					PWM_set_pulse(0, 0);
+					PWM_set_pulse(1, 0);
+					PWM_set_pulse(2, 0);
+					PWM_set_pulse(3, 0);
+					PWM_set_pulse(4, 0);
+					PWM_set_pulse(5, 0);
+					break;
+
+				case 5: 						// stop
+					stop_all_motors();
+					break;
+			}
+
+			command_byte = 0;
+			HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+		}
+
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -121,6 +188,8 @@ int main(void)
   MX_TIM4_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
+
+  xTaskCreate(Main_Thread, (const char* const)"main_thread", configMINIMAL_STACK_SIZE, 0, 2, 0);
 
   /* USER CODE END 2 */
 
@@ -326,7 +395,7 @@ static void MX_USART6_UART_Init(void)
 {
 
   huart6.Instance = USART6;
-  huart6.Init.BaudRate = 115200;
+  huart6.Init.BaudRate = 9600;
   huart6.Init.WordLength = UART_WORDLENGTH_8B;
   huart6.Init.StopBits = UART_STOPBITS_1;
   huart6.Init.Parity = UART_PARITY_NONE;
