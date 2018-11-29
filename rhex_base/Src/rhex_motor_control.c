@@ -1,6 +1,5 @@
 
-#include "stm32f4xx.h"
-#include "motor_control.h"
+#include <rhex_motor_control.h>
 
 
 
@@ -21,6 +20,8 @@ void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
 	 * 100%	-> 41667
 	 */
 	pulse = 8333 + (33334/100)*pulse;
+	// lehet hogy ez period-pulse kene hogy legyen
+	// lenyegeben invertalva kene kiadni a jelet
 
 	switch (pwm_pin) {
 		case 0:
@@ -58,7 +59,7 @@ void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
  */
 void stop_all_motors(void) {
 	for (int i = 0; i < 6; i++) {
-		PWM_set_pulse(i, 50);
+		PWM_set_pulse(i, MOTOR_SPEED_STOP);
 	}
 }
 

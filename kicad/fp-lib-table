@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name rhex)(type KiCad)(uri "$(KIPRJMOD)/rhex.pretty")(options "")(descr ""))
+)
