@@ -49,150 +49,102 @@ $EndDescr
 $Comp
 L Motor_Servo M1
 U 1 1 5BDDC4B0
-P 10400 1250
-F 0 "M1" H 10200 1425 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 1090 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 1060 50  0001 C CNN
-F 3 "" H 10400 1060 50  0001 C CNN
-	1    10400 1250
+P 10375 1575
+F 0 "M1" H 10175 1750 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 1415 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 1385 50  0001 C CNN
+F 3 "" H 10375 1385 50  0001 C CNN
+	1    10375 1575
 	1    0    0    -1  
 $EndComp
 $Comp
 L Motor_Servo M2
 U 1 1 5BDDC4F1
-P 10400 2100
-F 0 "M2" H 10200 2275 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 1940 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 1910 50  0001 C CNN
-F 3 "" H 10400 1910 50  0001 C CNN
-	1    10400 2100
+P 10375 2425
+F 0 "M2" H 10175 2600 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 2265 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 2235 50  0001 C CNN
+F 3 "" H 10375 2235 50  0001 C CNN
+	1    10375 2425
 	1    0    0    -1  
 $EndComp
 $Comp
 L Motor_Servo M3
 U 1 1 5BDDC531
-P 10400 2950
-F 0 "M3" H 10200 3125 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 2790 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 2760 50  0001 C CNN
-F 3 "" H 10400 2760 50  0001 C CNN
-	1    10400 2950
+P 10375 3275
+F 0 "M3" H 10175 3450 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 3115 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 3085 50  0001 C CNN
+F 3 "" H 10375 3085 50  0001 C CNN
+	1    10375 3275
 	1    0    0    -1  
 $EndComp
 $Comp
 L Motor_Servo M4
 U 1 1 5BDDC55C
-P 10400 3800
-F 0 "M4" H 10200 3975 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 3640 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 3610 50  0001 C CNN
-F 3 "" H 10400 3610 50  0001 C CNN
-	1    10400 3800
+P 10375 4125
+F 0 "M4" H 10175 4300 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 3965 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 3935 50  0001 C CNN
+F 3 "" H 10375 3935 50  0001 C CNN
+	1    10375 4125
 	1    0    0    -1  
 $EndComp
 $Comp
 L Motor_Servo M5
 U 1 1 5BDDC596
-P 10400 4650
-F 0 "M5" H 10200 4825 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 4490 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 4460 50  0001 C CNN
-F 3 "" H 10400 4460 50  0001 C CNN
-	1    10400 4650
+P 10375 4975
+F 0 "M5" H 10175 5150 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 4815 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 4785 50  0001 C CNN
+F 3 "" H 10375 4785 50  0001 C CNN
+	1    10375 4975
 	1    0    0    -1  
 $EndComp
 $Comp
 L Motor_Servo M6
 U 1 1 5BDDC5C9
-P 10400 5500
-F 0 "M6" H 10200 5675 50  0000 L CNN
-F 1 "Motor_Servo" H 10200 5340 50  0000 L TNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10400 5310 50  0001 C CNN
-F 3 "" H 10400 5310 50  0001 C CNN
-	1    10400 5500
+P 10375 5825
+F 0 "M6" H 10175 6000 50  0000 L CNN
+F 1 "Motor_Servo" H 10175 5665 50  0000 L TNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10375 5635 50  0001 C CNN
+F 3 "" H 10375 5635 50  0001 C CNN
+	1    10375 5825
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C1
 U 1 1 5BE08E7C
-P 8900 750
-F 0 "C1" H 8925 850 50  0000 L CNN
-F 1 "470uF" H 8925 650 50  0000 L CNN
-F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 8938 600 50  0001 C CNN
-F 3 "" H 8900 750 50  0001 C CNN
-	1    8900 750 
-	1    0    0    -1  
+P 8725 775
+F 0 "C1" V 8575 750 50  0000 L CNN
+F 1 "470uF" V 8850 675 50  0000 L CNN
+F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 8763 625 50  0001 C CNN
+F 3 "" H 8725 775 50  0001 C CNN
+	1    8725 775 
+	0    1    1    0   
 $EndComp
 $Comp
 L C C6
 U 1 1 5BE0A516
-P 8600 5675
-F 0 "C6" H 8425 5775 50  0000 L CNN
-F 1 "470uF" H 8325 5575 50  0000 L CNN
-F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 8638 5525 50  0001 C CNN
-F 3 "" H 8600 5675 50  0001 C CNN
-	1    8600 5675
-	1    0    0    -1  
+P 8700 6000
+F 0 "C6" V 8575 6050 50  0000 L CNN
+F 1 "470uF" V 8775 5700 50  0000 L CNN
+F 2 "Capacitors_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal" H 8738 5850 50  0001 C CNN
+F 3 "" H 8700 6000 50  0001 C CNN
+	1    8700 6000
+	0    1    1    0   
 $EndComp
 $Comp
 L GND #PWR01
 U 1 1 5BE1F663
-P 8700 6050
-F 0 "#PWR01" H 8700 5800 50  0001 C CNN
-F 1 "GND" H 8700 5900 50  0000 C CNN
-F 2 "" H 8700 6050 50  0001 C CNN
-F 3 "" H 8700 6050 50  0001 C CNN
-	1    8700 6050
+P 8675 6325
+F 0 "#PWR01" H 8675 6075 50  0001 C CNN
+F 1 "GND" H 8675 6175 50  0000 C CNN
+F 2 "" H 8675 6325 50  0001 C CNN
+F 3 "" H 8675 6325 50  0001 C CNN
+	1    8675 6325
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8400 950  10100 950 
-Wire Wire Line
-	8400 1800 10100 1800
-Wire Wire Line
-	8600 1250 10100 1250
-Wire Wire Line
-	8700 1600 10100 1600
-Connection ~ 8600 1250
-Wire Wire Line
-	8600 2100 10100 2100
-Connection ~ 8600 2100
-Wire Wire Line
-	8600 650  8600 5575
-Wire Wire Line
-	8600 2950 10100 2950
-Wire Wire Line
-	8700 3300 10100 3300
-Wire Wire Line
-	8600 3800 10100 3800
-Connection ~ 8600 2950
-Wire Wire Line
-	8700 4150 10100 4150
-Wire Wire Line
-	8600 4650 10100 4650
-Connection ~ 8600 3800
-Wire Wire Line
-	8700 5000 10100 5000
-Wire Wire Line
-	8600 5500 10100 5500
-Connection ~ 8600 4650
-Wire Wire Line
-	6650 5850 10100 5850
-Wire Wire Line
-	8400 2650 10100 2650
-Wire Wire Line
-	8400 3500 10100 3500
-Wire Wire Line
-	8400 4350 10100 4350
-Wire Wire Line
-	8400 5200 10100 5200
-Wire Wire Line
-	8700 750  8700 6050
-Connection ~ 8700 5850
-Connection ~ 8700 5000
-Connection ~ 8700 4150
-Connection ~ 8700 3300
-Connection ~ 8700 2450
 $Comp
 L DSN-1504-3A DSN-1504-3A1
 U 1 1 5BF47F0D
@@ -358,146 +310,70 @@ F 3 "" H 4300 7400 50  0001 C CNN
 	1    4300 7400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 6900 5850 6900
-Wire Wire Line
-	5650 3650 5650 7300
-Wire Wire Line
-	4300 2135 4300 7400
-Wire Wire Line
-	5650 6250 5850 6250
-Connection ~ 5650 6900
-Wire Wire Line
-	5650 5600 5850 5600
-Connection ~ 5650 6250
-Wire Wire Line
-	5650 4950 5850 4950
-Connection ~ 5650 5600
-Wire Wire Line
-	5650 4300 5850 4300
-Connection ~ 5650 4950
-Wire Wire Line
-	5650 3650 5850 3650
-Connection ~ 5650 4300
-Connection ~ 4300 7300
-Wire Wire Line
-	4300 6900 4500 6900
-Wire Wire Line
-	4300 6250 4500 6250
-Connection ~ 4300 6900
-Wire Wire Line
-	4300 5600 4500 5600
-Connection ~ 4300 6250
-Wire Wire Line
-	4300 4950 4500 4950
-Connection ~ 4300 5600
-Wire Wire Line
-	4300 4300 4500 4300
-Connection ~ 4300 4950
-Wire Wire Line
-	4300 3650 4500 3650
-Connection ~ 4300 4300
-Wire Wire Line
-	5850 3550 5750 3550
-Wire Wire Line
-	5750 3250 5750 6800
-Wire Wire Line
-	4400 3550 4500 3550
-Connection ~ 4400 3250
-Wire Wire Line
-	4400 4200 4500 4200
-Connection ~ 4400 3550
-Wire Wire Line
-	4400 4850 4500 4850
-Connection ~ 4400 4200
-Wire Wire Line
-	4400 5500 4500 5500
-Connection ~ 4400 4850
-Wire Wire Line
-	4400 6150 4500 6150
-Connection ~ 4400 5500
-Wire Wire Line
-	4400 6800 4500 6800
-Connection ~ 4400 6150
-Wire Wire Line
-	5750 4200 5850 4200
-Connection ~ 5750 3550
-Wire Wire Line
-	5750 4850 5850 4850
-Connection ~ 5750 4200
-Wire Wire Line
-	5750 5500 5850 5500
-Connection ~ 5750 4850
-Wire Wire Line
-	5750 6150 5850 6150
-Connection ~ 5750 5500
-Wire Wire Line
-	5750 6800 5850 6800
-Connection ~ 5750 6150
 $Comp
 L GPIO_PIN PA6
 U 1 1 5BFB3829
-P 8150 950
-F 0 "PA6" H 8150 850 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 1050 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 950 60  0001 C CNN
-F 3 "" H 8150 950 60  0001 C CNN
-	1    8150 950 
+P 8125 1275
+F 0 "PA6" H 8125 1175 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 1375 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 1275 60  0001 C CNN
+F 3 "" H 8125 1275 60  0001 C CNN
+	1    8125 1275
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPIO_PIN PA7
 U 1 1 5BFB3FA4
-P 8150 1800
-F 0 "PA7" H 8150 1700 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 1900 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 1800 60  0001 C CNN
-F 3 "" H 8150 1800 60  0001 C CNN
-	1    8150 1800
+P 8125 2125
+F 0 "PA7" H 8125 2025 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 2225 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 2125 60  0001 C CNN
+F 3 "" H 8125 2125 60  0001 C CNN
+	1    8125 2125
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPIO_PIN PB0
 U 1 1 5BFB46A0
-P 8150 2650
-F 0 "PB0" H 8150 2550 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 2750 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 2650 60  0001 C CNN
-F 3 "" H 8150 2650 60  0001 C CNN
-	1    8150 2650
+P 8125 2975
+F 0 "PB0" H 8125 2875 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 3075 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 2975 60  0001 C CNN
+F 3 "" H 8125 2975 60  0001 C CNN
+	1    8125 2975
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPIO_PIN PD12
 U 1 1 5BFB4736
-P 8150 3500
-F 0 "PD12" H 8150 3400 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 3600 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 3500 60  0001 C CNN
-F 3 "" H 8150 3500 60  0001 C CNN
-	1    8150 3500
+P 8125 3825
+F 0 "PD12" H 8125 3725 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 3925 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 3825 60  0001 C CNN
+F 3 "" H 8125 3825 60  0001 C CNN
+	1    8125 3825
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPIO_PIN PD13
 U 1 1 5BFB486A
-P 8150 4350
-F 0 "PD13" H 8150 4250 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 4450 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 4350 60  0001 C CNN
-F 3 "" H 8150 4350 60  0001 C CNN
-	1    8150 4350
+P 8125 4675
+F 0 "PD13" H 8125 4575 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 4775 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 4675 60  0001 C CNN
+F 3 "" H 8125 4675 60  0001 C CNN
+	1    8125 4675
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPIO_PIN PD14
 U 1 1 5BFB4902
-P 8150 5200
-F 0 "PD14" H 8150 5100 39  0000 C CNN
-F 1 "GPIO_PIN" H 8150 5300 28  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8150 5200 60  0001 C CNN
-F 3 "" H 8150 5200 60  0001 C CNN
-	1    8150 5200
+P 8125 5525
+F 0 "PD14" H 8125 5425 39  0000 C CNN
+F 1 "GPIO_PIN" H 8125 5625 28  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8125 5525 60  0001 C CNN
+F 3 "" H 8125 5525 60  0001 C CNN
+	1    8125 5525
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -687,44 +563,6 @@ F 3 "" H 6700 2525 50  0001 C CNN
 	1    6700 2525
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6275 2250 6775 2250
-Wire Wire Line
-	6775 2250 6775 2260
-Wire Wire Line
-	6275 2375 6325 2375
-Wire Wire Line
-	6625 2375 6775 2375
-Wire Wire Line
-	6775 2375 6775 2385
-Connection ~ 6700 2375
-Wire Wire Line
-	6700 2675 6700 2750
-Wire Wire Line
-	4250 3750 4500 3750
-Wire Wire Line
-	4250 4400 4500 4400
-Wire Wire Line
-	4250 5050 4500 5050
-Wire Wire Line
-	4250 5700 4500 5700
-Wire Wire Line
-	4250 6350 4500 6350
-Wire Wire Line
-	4250 7000 4500 7000
-Wire Wire Line
-	5600 7000 5850 7000
-Wire Wire Line
-	5600 6350 5850 6350
-Wire Wire Line
-	5600 5700 5850 5700
-Wire Wire Line
-	5600 5050 5850 5050
-Wire Wire Line
-	5600 4400 5850 4400
-Wire Wire Line
-	5600 3750 5850 3750
-Connection ~ 8700 1600
 $Comp
 L C C16
 U 1 1 5BFC279F
@@ -791,44 +629,6 @@ F 3 "" H 1525 2425 50  0001 C CNN
 	1    1525 2425
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1175 2275 2300 2275
-Wire Wire Line
-	1525 2275 1525 2325
-Wire Wire Line
-	1825 2325 1825 2275
-Connection ~ 1825 2275
-Wire Wire Line
-	2100 2325 2100 2275
-Connection ~ 2100 2275
-Wire Wire Line
-	1075 2575 2300 2575
-Wire Wire Line
-	1525 2575 1525 2525
-Wire Wire Line
-	1825 2525 1825 2575
-Connection ~ 1825 2575
-Wire Wire Line
-	2100 2525 2100 2575
-Connection ~ 2100 2575
-Wire Wire Line
-	3925 2575 3925 2525
-Wire Wire Line
-	3275 2525 3275 2575
-Connection ~ 3275 2575
-Wire Wire Line
-	3600 2575 3600 2525
-Connection ~ 3600 2575
-Wire Wire Line
-	3275 2325 3275 2275
-Connection ~ 3275 2275
-Wire Wire Line
-	3600 2275 3600 2325
-Connection ~ 3600 2275
-Connection ~ 3925 2275
-Wire Wire Line
-	4400 2010 4400 6800
-Connection ~ 3925 2575
 $Comp
 L HC-06-bluetooth HC-6
 U 1 1 5BFAA134
@@ -873,28 +673,6 @@ F 3 "" H 3875 1300 50  0001 C CNN
 	1    3875 1300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3225 1125 4150 1125
-Wire Wire Line
-	3875 1125 3875 1200
-Wire Wire Line
-	3575 1200 3575 1125
-Connection ~ 3575 1125
-Wire Wire Line
-	3275 1200 3275 1125
-Connection ~ 3275 1125
-Wire Wire Line
-	3875 1475 3875 1400
-Wire Wire Line
-	3575 1475 3575 1400
-Connection ~ 3575 1475
-Wire Wire Line
-	3275 1475 3275 1400
-Connection ~ 3275 1475
-Connection ~ 3875 1125
-Connection ~ 3875 1475
-Connection ~ 1525 2275
-Connection ~ 1525 2575
 $Comp
 L C C9
 U 1 1 5BFBC50D
@@ -928,26 +706,6 @@ F 3 "" H 2100 1275 50  0001 C CNN
 	1    2100 1275
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	700  1475 2275 1475
-Wire Wire Line
-	2100 1475 2100 1375
-Wire Wire Line
-	1800 1475 1800 1375
-Connection ~ 2100 1475
-Wire Wire Line
-	1500 1475 1500 1375
-Connection ~ 1800 1475
-Wire Wire Line
-	1500 1125 1500 1175
-Wire Wire Line
-	700  1125 2275 1125
-Wire Wire Line
-	2100 1175 2100 1125
-Connection ~ 2100 1125
-Wire Wire Line
-	1800 1175 1800 1125
-Connection ~ 1800 1125
 $Comp
 L +BATT #PWR04
 U 1 1 5BFBEA82
@@ -970,30 +728,6 @@ F 3 "" H 700 1475 50  0001 C CNN
 	1    700  1475
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3200 2575 4725 2575
-Wire Wire Line
-	3925 2275 3925 2325
-Wire Wire Line
-	4300 2135 6775 2135
-Wire Wire Line
-	4150 1125 4150 650 
-Wire Wire Line
-	4150 650  8900 650 
-Wire Wire Line
-	8700 750  4250 750 
-Wire Wire Line
-	4250 750  4250 1475
-Connection ~ 1500 1125
-Connection ~ 1500 1475
-Wire Wire Line
-	1175 2275 1175 1125
-Connection ~ 1175 1125
-Wire Wire Line
-	1075 2575 1075 1475
-Connection ~ 1075 1475
-Wire Wire Line
-	4400 3250 5750 3250
 $Comp
 L Conn_01x02 J1
 U 1 1 5BFC494F
@@ -1005,11 +739,405 @@ F 3 "" H 4925 2475 50  0001 C CNN
 	1    4925 2475
 	1    0    0    -1  
 $EndComp
+Text Notes 7050 6775 0    67   ~ 0
+Application shield for STM32F4 Discovery to connect servo motors, hal sensors,\nand a bluetooth module.
+Text Notes 7375 7500 0    60   ~ 0
+Spybot Rhex application shield for STM32F4 Discovery
 Wire Wire Line
-	4300 7300 6650 7300
+	8375 1275 10075 1275
+Wire Wire Line
+	8375 2125 10075 2125
+Wire Wire Line
+	8575 1575 10075 1575
+Wire Wire Line
+	8875 1925 10075 1925
+Connection ~ 8575 1575
+Wire Wire Line
+	8575 2425 10075 2425
+Connection ~ 8575 2425
+Wire Wire Line
+	8575 3275 10075 3275
+Wire Wire Line
+	8875 3625 10075 3625
+Wire Wire Line
+	8575 4125 10075 4125
+Connection ~ 8575 3275
+Wire Wire Line
+	8875 4475 10075 4475
+Wire Wire Line
+	8575 4975 10075 4975
+Connection ~ 8575 4125
+Wire Wire Line
+	8875 5325 10075 5325
+Wire Wire Line
+	8575 5825 10075 5825
+Connection ~ 8575 4975
+Wire Wire Line
+	6625 6175 8675 6175
+Wire Wire Line
+	8675 6175 8875 6175
+Wire Wire Line
+	8875 6175 10075 6175
+Wire Wire Line
+	8375 2975 10075 2975
+Wire Wire Line
+	8375 3825 10075 3825
+Wire Wire Line
+	8375 4675 10075 4675
+Wire Wire Line
+	8375 5525 10075 5525
+Wire Wire Line
+	8875 775  8875 950 
+Wire Wire Line
+	8875 950  8875 1925
+Wire Wire Line
+	8875 1925 8875 2775
+Wire Wire Line
+	8875 2775 8875 3625
+Wire Wire Line
+	8875 3625 8875 4475
+Wire Wire Line
+	8875 4475 8875 5325
+Wire Wire Line
+	8875 5325 8875 6000
+Wire Wire Line
+	8875 6000 8875 6175
+Wire Wire Line
+	8875 6175 8675 6175
+Wire Wire Line
+	8675 6175 8675 6325
+Connection ~ 8675 6175
+Connection ~ 8875 5325
+Connection ~ 8875 4475
+Connection ~ 8875 3625
+Connection ~ 8875 2775
+Wire Wire Line
+	5650 6900 5850 6900
+Wire Wire Line
+	5650 3650 5650 4300
+Wire Wire Line
+	5650 4300 5650 4950
+Wire Wire Line
+	5650 4950 5650 5600
+Wire Wire Line
+	5650 5600 5650 6250
+Wire Wire Line
+	5650 6250 5650 6900
+Wire Wire Line
+	5650 6900 5650 7300
+Wire Wire Line
+	4300 2135 4300 2575
+Wire Wire Line
+	4300 2575 4300 3650
+Wire Wire Line
+	4300 3650 4300 4300
+Wire Wire Line
+	4300 4300 4300 4950
+Wire Wire Line
+	4300 4950 4300 5600
+Wire Wire Line
+	4300 5600 4300 6250
+Wire Wire Line
+	4300 6250 4300 6900
+Wire Wire Line
+	4300 6900 4300 7300
+Wire Wire Line
+	4300 7300 4300 7400
+Wire Wire Line
+	5650 6250 5850 6250
+Connection ~ 5650 6900
+Wire Wire Line
+	5650 5600 5850 5600
+Connection ~ 5650 6250
+Wire Wire Line
+	5650 4950 5850 4950
+Connection ~ 5650 5600
+Wire Wire Line
+	5650 4300 5850 4300
+Connection ~ 5650 4950
+Wire Wire Line
+	5650 3650 5850 3650
+Connection ~ 5650 4300
+Connection ~ 4300 7300
+Wire Wire Line
+	4300 6900 4500 6900
+Wire Wire Line
+	4300 6250 4500 6250
+Connection ~ 4300 6900
+Wire Wire Line
+	4300 5600 4500 5600
+Connection ~ 4300 6250
+Wire Wire Line
+	4300 4950 4500 4950
+Connection ~ 4300 5600
+Wire Wire Line
+	4300 4300 4500 4300
+Connection ~ 4300 4950
+Wire Wire Line
+	4300 3650 4500 3650
+Connection ~ 4300 4300
+Wire Wire Line
+	5850 3550 5750 3550
+Wire Wire Line
+	5750 3250 5750 3550
+Wire Wire Line
+	5750 3550 5750 4200
+Wire Wire Line
+	5750 4200 5750 4850
+Wire Wire Line
+	5750 4850 5750 5500
+Wire Wire Line
+	5750 5500 5750 6150
+Wire Wire Line
+	5750 6150 5750 6800
+Wire Wire Line
+	4400 3550 4500 3550
+Connection ~ 4400 3250
+Wire Wire Line
+	4400 4200 4500 4200
+Connection ~ 4400 3550
+Wire Wire Line
+	4400 4850 4500 4850
+Connection ~ 4400 4200
+Wire Wire Line
+	4400 5500 4500 5500
+Connection ~ 4400 4850
+Wire Wire Line
+	4400 6150 4500 6150
+Connection ~ 4400 5500
+Wire Wire Line
+	4400 6800 4500 6800
+Connection ~ 4400 6150
+Wire Wire Line
+	5750 4200 5850 4200
+Connection ~ 5750 3550
+Wire Wire Line
+	5750 4850 5850 4850
+Connection ~ 5750 4200
+Wire Wire Line
+	5750 5500 5850 5500
+Connection ~ 5750 4850
+Wire Wire Line
+	5750 6150 5850 6150
+Connection ~ 5750 5500
+Wire Wire Line
+	5750 6800 5850 6800
+Connection ~ 5750 6150
+Wire Wire Line
+	6275 2250 6775 2250
+Wire Wire Line
+	6775 2250 6775 2260
+Wire Wire Line
+	6275 2375 6325 2375
+Wire Wire Line
+	6625 2375 6700 2375
+Wire Wire Line
+	6700 2375 6775 2375
+Wire Wire Line
+	6775 2375 6775 2385
+Connection ~ 6700 2375
+Wire Wire Line
+	6700 2675 6700 2750
+Wire Wire Line
+	4250 3750 4500 3750
+Wire Wire Line
+	4250 4400 4500 4400
+Wire Wire Line
+	4250 5050 4500 5050
+Wire Wire Line
+	4250 5700 4500 5700
+Wire Wire Line
+	4250 6350 4500 6350
+Wire Wire Line
+	4250 7000 4500 7000
+Wire Wire Line
+	5600 7000 5850 7000
+Wire Wire Line
+	5600 6350 5850 6350
+Wire Wire Line
+	5600 5700 5850 5700
+Wire Wire Line
+	5600 5050 5850 5050
+Wire Wire Line
+	5600 4400 5850 4400
+Wire Wire Line
+	5600 3750 5850 3750
+Connection ~ 8875 1925
+Wire Wire Line
+	1175 2275 1525 2275
+Wire Wire Line
+	1525 2275 1825 2275
+Wire Wire Line
+	1825 2275 2100 2275
+Wire Wire Line
+	2100 2275 2300 2275
+Wire Wire Line
+	1525 2275 1525 2325
+Wire Wire Line
+	1825 2325 1825 2275
+Connection ~ 1825 2275
+Wire Wire Line
+	2100 2325 2100 2275
+Connection ~ 2100 2275
+Wire Wire Line
+	1075 2575 1525 2575
+Wire Wire Line
+	1525 2575 1825 2575
+Wire Wire Line
+	1825 2575 2100 2575
+Wire Wire Line
+	2100 2575 2300 2575
+Wire Wire Line
+	1525 2575 1525 2525
+Wire Wire Line
+	1825 2525 1825 2575
+Connection ~ 1825 2575
+Wire Wire Line
+	2100 2525 2100 2575
+Connection ~ 2100 2575
+Wire Wire Line
+	3925 2575 3925 2525
+Wire Wire Line
+	3275 2525 3275 2575
+Connection ~ 3275 2575
+Wire Wire Line
+	3600 2575 3600 2525
+Connection ~ 3600 2575
+Wire Wire Line
+	3275 2325 3275 2275
+Connection ~ 3275 2275
+Wire Wire Line
+	3600 2275 3600 2325
+Connection ~ 3600 2275
+Connection ~ 3925 2275
+Wire Wire Line
+	4400 2010 4400 2275
+Wire Wire Line
+	4400 2275 4400 2475
+Wire Wire Line
+	4400 2475 4400 3250
+Wire Wire Line
+	4400 3250 4400 3550
+Wire Wire Line
+	4400 3550 4400 4200
+Wire Wire Line
+	4400 4200 4400 4850
+Wire Wire Line
+	4400 4850 4400 5500
+Wire Wire Line
+	4400 5500 4400 6150
+Wire Wire Line
+	4400 6150 4400 6800
+Connection ~ 3925 2575
+Wire Wire Line
+	3225 1125 3275 1125
+Wire Wire Line
+	3275 1125 3575 1125
+Wire Wire Line
+	3575 1125 3875 1125
+Wire Wire Line
+	3875 1125 4150 1125
+Wire Wire Line
+	3875 1125 3875 1200
+Wire Wire Line
+	3575 1200 3575 1125
+Connection ~ 3575 1125
+Wire Wire Line
+	3275 1200 3275 1125
+Connection ~ 3275 1125
+Wire Wire Line
+	3875 1475 3875 1400
+Wire Wire Line
+	3575 1475 3575 1400
+Connection ~ 3575 1475
+Wire Wire Line
+	3275 1475 3275 1400
+Connection ~ 3275 1475
+Connection ~ 3875 1125
+Connection ~ 3875 1475
+Connection ~ 1525 2275
+Connection ~ 1525 2575
+Wire Wire Line
+	700  1475 1075 1475
+Wire Wire Line
+	1075 1475 1500 1475
+Wire Wire Line
+	1500 1475 1800 1475
+Wire Wire Line
+	1800 1475 2100 1475
+Wire Wire Line
+	2100 1475 2275 1475
+Wire Wire Line
+	2100 1475 2100 1375
+Wire Wire Line
+	1800 1475 1800 1375
+Connection ~ 2100 1475
+Wire Wire Line
+	1500 1475 1500 1375
+Connection ~ 1800 1475
+Wire Wire Line
+	1500 1125 1500 1175
+Wire Wire Line
+	700  1125 1175 1125
+Wire Wire Line
+	1175 1125 1500 1125
+Wire Wire Line
+	1500 1125 1800 1125
+Wire Wire Line
+	1800 1125 2100 1125
+Wire Wire Line
+	2100 1125 2275 1125
+Wire Wire Line
+	2100 1175 2100 1125
+Connection ~ 2100 1125
+Wire Wire Line
+	1800 1175 1800 1125
+Connection ~ 1800 1125
+Wire Wire Line
+	3200 2575 3275 2575
+Wire Wire Line
+	3275 2575 3600 2575
+Wire Wire Line
+	3600 2575 3925 2575
+Wire Wire Line
+	3925 2575 4300 2575
+Wire Wire Line
+	4300 2575 4725 2575
+Wire Wire Line
+	3925 2275 3925 2325
+Wire Wire Line
+	4300 2135 6775 2135
+Wire Wire Line
+	4150 1125 4150 650 
+Wire Wire Line
+	4150 650  8575 650 
+Wire Wire Line
+	4250 950  8875 950 
+Wire Wire Line
+	4250 1475 4250 950 
+Connection ~ 1500 1125
+Connection ~ 1500 1475
+Wire Wire Line
+	1175 2275 1175 1125
+Connection ~ 1175 1125
+Wire Wire Line
+	1075 2575 1075 1475
+Connection ~ 1075 1475
+Wire Wire Line
+	4400 3250 5750 3250
+Wire Wire Line
+	4300 7300 5650 7300
+Wire Wire Line
+	5650 7300 6625 7300
 Connection ~ 4300 3650
 Wire Wire Line
-	3200 2275 4400 2275
+	3200 2275 3275 2275
+Wire Wire Line
+	3275 2275 3600 2275
+Wire Wire Line
+	3600 2275 3925 2275
+Wire Wire Line
+	3925 2275 4400 2275
 Connection ~ 4300 2575
 Wire Wire Line
 	4725 2475 4400 2475
@@ -1017,23 +1145,46 @@ Connection ~ 4400 2475
 Connection ~ 4400 2275
 Wire Wire Line
 	4400 2010 6775 2010
-Wire Wire Line
-	6650 7300 6650 5850
 Connection ~ 5650 7300
-Text Notes 7050 6775 0    67   ~ 0
-Application shield for STM32F4 Discovery to connect servo motors, hal sensors,\nand a bluetooth module.
-Text Notes 7375 7500 0    60   ~ 0
-Spybot Rhex application shield for STM32F4 Discovery
-Connection ~ 8700 5775
-Connection ~ 8600 5500
+Connection ~ 8875 6175
+Connection ~ 8575 5825
 Wire Wire Line
-	8700 2450 10100 2450
-Connection ~ 8600 650 
+	8875 2775 10075 2775
 Wire Wire Line
-	8900 850  8700 850 
-Connection ~ 8700 850 
+	3225 1475 3275 1475
 Wire Wire Line
-	8700 5775 8600 5775
+	3275 1475 3575 1475
 Wire Wire Line
-	4250 1475 3225 1475
+	3575 1475 3875 1475
+Wire Wire Line
+	3875 1475 4250 1475
+Wire Wire Line
+	8625 775  8575 775 
+Connection ~ 8575 775 
+Wire Wire Line
+	8875 6000 8800 6000
+Connection ~ 8875 6000
+Wire Wire Line
+	8575 6000 8600 6000
+Wire Wire Line
+	8575 650  8575 775 
+Wire Wire Line
+	8575 775  8575 1575
+Wire Wire Line
+	8575 1575 8575 2425
+Wire Wire Line
+	8575 2425 8575 3275
+Wire Wire Line
+	8575 3275 8575 4125
+Wire Wire Line
+	8575 4125 8575 4975
+Wire Wire Line
+	8575 4975 8575 5825
+Wire Wire Line
+	8575 5825 8575 6000
+Connection ~ 8875 950 
+Wire Wire Line
+	8875 775  8825 775 
+Wire Wire Line
+	6625 7300 6625 6175
 $EndSCHEMATC
