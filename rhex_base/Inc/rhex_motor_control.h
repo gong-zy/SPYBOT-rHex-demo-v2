@@ -4,8 +4,8 @@
 #ifndef RHEX_MOTOR_CONTROL_H
 #define RHEX_MOTOR_CONTROL_H
 
-#define MOTOR_SPEED_FWD_MAX (110)
-#define MOTOR_SPEED_BCK_MAX (1)
+#define MOTOR_SPEED_FWD_MAX (65)
+#define MOTOR_SPEED_BCK_MAX (25)
 #define MOTOR_SPEED_STOP (50)
 
 extern TIM_HandleTypeDef htim3;
