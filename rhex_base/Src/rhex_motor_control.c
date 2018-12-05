@@ -1,8 +1,6 @@
 
 #include <rhex_motor_control.h>
 
-
-
 /*
  * Brief: Sets pulse with of a specified PWM channel
  * @pwm_pin: the number of pin
@@ -89,5 +87,51 @@ void PWM_stop_all(void) {
 	HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 }
 
+/*
+ * Brief: Updates te motors position state 
+ * @motors: pointer to the motors state array
+ * @motors: pointer to the desired positions
+ */
+uint32_t motors_at_state(LEG_STATE* motors, LEG_STATE* states) {
+	for (int i = 0; i < 6; i++) {
+		if (motors[i] != states[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
 
+/*
+ * Brief: Return the state of the motors position
+ * @hal_upper: the value of the upper sersors input pin
+ * @hal_upper: the value of the lower sersors input pin
+ */
+LEG_STATE get_motor_state(uint32_t hal_upper, uint32_t hal_lower) {
+	if (hal_upper == 0) {
+		return UP;
+	}
+	if (hal_lower == 0) {
+		return DOWN;
+	}
+	return UNKNOWN;
+}
+
+/*
+ * Brief: Updates te motors position state 
+ * @motors: pointer to the motors state array
+ */
+void update_motors_states(LEG_STATE* motors) {
+	motors[0] = get_motor_state(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2), HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_6));
+	motors[1] = get_motor_state(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_1), HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_2));
+	motors[2] = get_motor_state(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_3), HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3));
+	motors[3] = get_motor_state(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_15), HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13));
+	motors[4] = get_motor_state(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2), HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_3));
+	motors[5] = get_motor_state(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9), HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0));
+}
+
+void set_states(LEG_STATE* src, LEG_STATE* dest) {
+	for (int i = 0; i < 6; i++) {
+		dest[i] = src[i];
+	}
+}
 

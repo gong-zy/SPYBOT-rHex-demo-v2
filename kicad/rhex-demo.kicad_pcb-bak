@@ -63,7 +63,7 @@
     (pad_to_mask_clearance 0.2)
     (aux_axis_origin 48.26 21.59)
     (grid_origin 48.26 21.59)
-    (visible_elements 7FFEFFFF)
+    (visible_elements 7FFEF7FF)
     (pcbplotparams
       (layerselection 0x01030_80000001)
       (usegerberextensions false)
@@ -84,7 +84,7 @@
       (plotinvisibletext false)
       (padsonsilk false)
       (subtractmaskfromsilk false)
-      (outputformat 5)
+      (outputformat 4)
       (mirror false)
       (drillshape 0)
       (scaleselection 1)

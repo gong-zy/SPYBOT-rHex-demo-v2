@@ -79,6 +79,7 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart6;
 
 osThreadId defaultTaskHandle;
+osMutexId uartMutexHandle;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
@@ -101,6 +102,46 @@ void StartDefaultTask(void const * argument);
 /* USER CODE BEGIN 0 */
 void Main_Thread(void *pvParameters) {
 	uint8_t command_byte = 0;
+    LEG_STATE motor_states[6] = {
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN
+    };
+    LEG_STATE desired_states[6] = {
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN,
+    UNKNOWN
+    };
+    LEG_STATE leg_states_walk_1[6] = {
+    UP,
+    DOWN,
+    UP,
+    DOWN,
+    UP,
+    DOWN
+    };
+    LEG_STATE leg_states_walk_2[6] = {
+    DOWN,
+    UP,
+    DOWN,
+    UP,
+    DOWN,
+    UP
+    };
+    LEG_STATE leg_states_stop[6] = {
+    DOWN,
+    DOWN,
+    DOWN,
+    DOWN,
+    DOWN,
+    DOWN
+    };
 
 	HAL_UART_Receive_IT(&huart6, &command_byte, 1);
 	PWM_start_all();
@@ -110,6 +151,8 @@ void Main_Thread(void *pvParameters) {
 	osDelay(500);
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
 	osDelay(500);
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+    osDelay(500);
 
 
 	while (1) {
@@ -127,6 +170,34 @@ void Main_Thread(void *pvParameters) {
 					PWM_set_pulse(3, MOTOR_SPEED_BCK_MAX);
 					PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
 					PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
+
+                    set_states(leg_states_walk_1, desired_states);
+                    while (motors_at_state(motor_states, desired_states) != 1) {
+                    	update_motors_states(motor_states);
+                    	for (int i = 0; i < 6; i++) {
+                    		if (motor_states[i] == desired_states[i]) {
+                    			PWM_set_pulse(i, MOTOR_SPEED_STOP);
+                    		}
+                    	}
+                    }
+
+					PWM_set_pulse(0, MOTOR_SPEED_FWD_MAX);
+					PWM_set_pulse(1, MOTOR_SPEED_FWD_MAX);
+					PWM_set_pulse(2, MOTOR_SPEED_FWD_MAX);
+					PWM_set_pulse(3, MOTOR_SPEED_BCK_MAX);
+					PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
+					PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
+
+                    set_states(leg_states_walk_2, desired_states);
+					while (motors_at_state(motor_states, desired_states) != 1) {
+						update_motors_states(motor_states);
+						for (int i = 0; i < 6; i++) {
+							if (motor_states[i] == desired_states[i]) {
+								PWM_set_pulse(i, MOTOR_SPEED_STOP);
+							}
+						}
+					}
+
 					break;
 
 				case 2: 						// backward
@@ -167,6 +238,12 @@ void Main_Thread(void *pvParameters) {
 
 	}
 }
+
+void Uart_Thread(void *pvParameters) {
+	xSemaphoreTake(uartMutexHandle, portMAX_DELAY);
+
+	xSemaphoreGive(uartMutexHandle);
+}
 /* USER CODE END 0 */
 
 /**
@@ -203,8 +280,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   xTaskCreate(Main_Thread, (const char* const)"main_thread", configMINIMAL_STACK_SIZE, 0, 2, 0);
+  xTaskCreate(Uart_Thread, (const char* const)"uart_thread", configMINIMAL_STACK_SIZE, 0, 2, 0);
 
   /* USER CODE END 2 */
+
+  /* Create the mutex(es) */
+  /* definition and creation of uartMutex */
+  osMutexDef(uartMutex);
+  uartMutexHandle = osMutexCreate(osMutex(uartMutex));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -265,13 +348,12 @@ void SystemClock_Config(void)
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
   /**Initializes the CPU, AHB and APB busses clocks 
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 100;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 12;
+  RCC_OscInitStruct.PLL.PLLN = 96;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -314,7 +396,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 3;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 60000;
+  htim3.Init.Period = 50000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
   {
@@ -370,7 +452,7 @@ static void MX_TIM4_Init(void)
   htim4.Instance = TIM4;
   htim4.Init.Prescaler = 3;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 60000;
+  htim4.Init.Period = 50000;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
   {
@@ -449,6 +531,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();

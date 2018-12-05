@@ -635,7 +635,7 @@ U 1 1 5BFAA134
 P 7025 2200
 F 0 "HC-6" H 7075 1850 60  0000 C CNN
 F 1 "HC-06-bluetooth" H 7075 2525 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 7075 2140 60  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x06_Pitch2.54mm" H 7075 2140 60  0001 C CNN
 F 3 "" H 7075 2140 60  0001 C CNN
 	1    7025 2200
 	1    0    0    -1  
