@@ -145,7 +145,7 @@ void Main_Thread(void *pvParameters) {
 
 	HAL_UART_Receive_IT(&huart6, &command_byte, 1);
 	PWM_start_all();
-	stop_all_motors();
+	//stop_all_motors();
 
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
 	osDelay(500);
@@ -153,6 +153,8 @@ void Main_Thread(void *pvParameters) {
 	osDelay(500);
     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
     osDelay(500);
+
+    all_fwd();
 
 
 	while (1) {
@@ -172,14 +174,7 @@ void Main_Thread(void *pvParameters) {
 					PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
 
                     set_states(leg_states_walk_1, desired_states);
-                    while (motors_at_state(motor_states, desired_states) != 1) {
-                    	update_motors_states(motor_states);
-                    	for (int i = 0; i < 6; i++) {
-                    		if (motor_states[i] == desired_states[i]) {
-                    			PWM_set_pulse(i, MOTOR_SPEED_STOP);
-                    		}
-                    	}
-                    }
+                    wait_for_state(motor_states, desired_states);
 
 					PWM_set_pulse(0, MOTOR_SPEED_FWD_MAX);
 					PWM_set_pulse(1, MOTOR_SPEED_FWD_MAX);
@@ -189,14 +184,7 @@ void Main_Thread(void *pvParameters) {
 					PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
 
                     set_states(leg_states_walk_2, desired_states);
-					while (motors_at_state(motor_states, desired_states) != 1) {
-						update_motors_states(motor_states);
-						for (int i = 0; i < 6; i++) {
-							if (motor_states[i] == desired_states[i]) {
-								PWM_set_pulse(i, MOTOR_SPEED_STOP);
-							}
-						}
-					}
+                    wait_for_state(motor_states, desired_states);
 
 					break;
 
@@ -228,7 +216,9 @@ void Main_Thread(void *pvParameters) {
 					break;
 
 				case 5: 						// stop
-					stop_all_motors();
+					all_fwd();
+					set_states(leg_states_stop, desired_states);
+                    wait_for_state(motor_states, desired_states);
 					break;
 			}
 

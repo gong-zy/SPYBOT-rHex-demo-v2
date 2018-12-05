@@ -31,5 +31,7 @@ uint32_t motors_at_state(LEG_STATE* motors, LEG_STATE* states);
 LEG_STATE get_motor_state(uint32_t hal_upper, uint32_t hal_lower);
 void update_motors_states(LEG_STATE* motors);
 void set_states(LEG_STATE* src, LEG_STATE* dest);
+void wait_for_state(LEG_STATE* motors, LEG_STATE* states);
+void all_fwd();
 
 #endif // RHEX_MOTOR_CONTROL_H

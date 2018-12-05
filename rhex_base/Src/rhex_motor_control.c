@@ -135,3 +135,22 @@ void set_states(LEG_STATE* src, LEG_STATE* dest) {
 	}
 }
 
+void wait_for_state(LEG_STATE* motors, LEG_STATE* states) {
+    while (motors_at_state(motors, states) != 1) {
+    	update_motors_states(motors);
+    	for (int i = 0; i < 6; i++) {
+    		if (motors[i] == states[i]) {
+    			PWM_set_pulse(i, MOTOR_SPEED_STOP);
+    		}
+    	}
+    }
+}
+
+void all_fwd() {
+	PWM_set_pulse(0, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(1, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(2, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(3, MOTOR_SPEED_BCK_MAX);
+	PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
+	PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
+}
