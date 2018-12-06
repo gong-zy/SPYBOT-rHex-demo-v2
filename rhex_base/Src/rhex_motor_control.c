@@ -18,8 +18,6 @@ void PWM_set_pulse(uint8_t pwm_pin, float pulse) {
 	 * 100%	-> 41667
 	 */
 	pulse = 8333 + (33334/100)*pulse;
-	// lehet hogy ez period-pulse kene hogy legyen
-	// lenyegeben invertalva kene kiadni a jelet
 
 	switch (pwm_pin) {
 		case 0:
@@ -88,7 +86,7 @@ void PWM_stop_all(void) {
 }
 
 /*
- * Brief: Updates te motors position state 
+ * Brief: Updates te motors position state
  * @motors: pointer to the motors state array
  * @motors: pointer to the desired positions
  */
@@ -117,7 +115,7 @@ LEG_STATE get_motor_state(uint32_t hal_upper, uint32_t hal_lower) {
 }
 
 /*
- * Brief: Updates te motors position state 
+ * Brief: Updates te motors position state
  * @motors: pointer to the motors state array
  */
 void update_motors_states(LEG_STATE* motors) {
@@ -129,12 +127,22 @@ void update_motors_states(LEG_STATE* motors) {
 	motors[5] = get_motor_state(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9), HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0));
 }
 
+/*
+ * Brief: Copies the source array to the destination
+ * @src: source array
+ * @dest: destination array
+ */
 void set_states(LEG_STATE* src, LEG_STATE* dest) {
 	for (int i = 0; i < 6; i++) {
 		dest[i] = src[i];
 	}
 }
 
+/*
+ * Brief: Waiting for all motors to be in a given state
+ * @motors: pointer to the motors states array
+ * @states: pointer to the desired states array
+ */
 void wait_for_state(LEG_STATE* motors, LEG_STATE* states) {
     while (motors_at_state(motors, states) != 1) {
     	update_motors_states(motors);
@@ -146,11 +154,41 @@ void wait_for_state(LEG_STATE* motors, LEG_STATE* states) {
     }
 }
 
-void all_fwd() {
+/*
+ * Brief: Sets all motors to turn forward
+ */
+void go_fwd() {
 	PWM_set_pulse(0, MOTOR_SPEED_FWD_MAX);
 	PWM_set_pulse(1, MOTOR_SPEED_FWD_MAX);
 	PWM_set_pulse(2, MOTOR_SPEED_FWD_MAX);
 	PWM_set_pulse(3, MOTOR_SPEED_BCK_MAX);
 	PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
 	PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
+}
+
+void go_bckw() {
+    PWM_set_pulse(0, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(1, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(2, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(3, MOTOR_SPEED_FWD_MAX);
+    PWM_set_pulse(4, MOTOR_SPEED_FWD_MAX);
+    PWM_set_pulse(5, MOTOR_SPEED_FWD_MAX);
+}
+
+void go_left() {
+	PWM_set_pulse(0, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(1, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(2, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(3, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(4, MOTOR_SPEED_FWD_MAX);
+	PWM_set_pulse(5, MOTOR_SPEED_FWD_MAX);
+}
+
+void go_right() {
+    PWM_set_pulse(0, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(1, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(2, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(3, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
+    PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
 }
