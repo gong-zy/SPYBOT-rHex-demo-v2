@@ -145,19 +145,19 @@ void Main_Thread(void *pvParameters) {
     DOWN
     };
 
-	HAL_UART_Receive_IT(&huart6, &command_byte, 1);
-	PWM_start_all();
+    HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+    PWM_start_all();
     stop_all_motors();
 
-	while (1) {
-		if (command_byte != 0) {
-			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-			osDelay(500);
-			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-			osDelay(500);
+    while (1) {
+        if (command_byte != 0) {
+            HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+            osDelay(500);
+            HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+            osDelay(500);
 
-			switch (command_byte) {
-				case 1: 						// forward
+            switch (command_byte) {
+                case 1:                         // forward
                     go_fwd();
                     set_states(leg_states_walk_1, desired_states);
                     wait_for_state(motor_states, desired_states);
@@ -166,9 +166,9 @@ void Main_Thread(void *pvParameters) {
                     set_states(leg_states_walk_2, desired_states);
                     wait_for_state(motor_states, desired_states);
 
-					break;
+                    break;
 
-				case 2: 						// backward
+                case 2:                         // backward
                     go_bckw();
                     set_states(leg_states_walk_1, desired_states);
                     wait_for_state(motor_states, desired_states);
@@ -177,9 +177,9 @@ void Main_Thread(void *pvParameters) {
                     set_states(leg_states_walk_2, desired_states);
                     wait_for_state(motor_states, desired_states);
 
-					break;
+                    break;
 
-				case 3: 						// left
+                case 3:                         // left
                     go_left();
                     set_states(leg_states_walk_1, desired_states);
                     wait_for_state(motor_states, desired_states);
@@ -188,9 +188,9 @@ void Main_Thread(void *pvParameters) {
                     go_left();
                     set_states(leg_states_walk_2, desired_states);
                     wait_for_state(motor_states, desired_states);
-					break;
+                    break;
 
-				case 4: 						// right
+                case 4:                         // right
                     go_right();
                     set_states(leg_states_walk_1, desired_states);
                     wait_for_state(motor_states, desired_states);
@@ -198,26 +198,26 @@ void Main_Thread(void *pvParameters) {
                     go_right();
                     set_states(leg_states_walk_2, desired_states);
                     wait_for_state(motor_states, desired_states);
-					break;
+                    break;
 
-				case 5: 						// stop
-					go_fwd();
-					set_states(leg_states_stop, desired_states);
+                case 5:                         // stop
+                    go_fwd();
+                    set_states(leg_states_stop, desired_states);
                     wait_for_state(motor_states, desired_states);
-					break;
-			}
+                    break;
+            }
 
-			command_byte = 0;
-			HAL_UART_Receive_IT(&huart6, &command_byte, 1);
-		}
+            command_byte = 0;
+            HAL_UART_Receive_IT(&huart6, &command_byte, 1);
+        }
 
-	}
+    }
 }
 
 void Uart_Thread(void *pvParameters) {
-	xSemaphoreTake(uartMutexHandle, portMAX_DELAY);
+    xSemaphoreTake(uartMutexHandle, portMAX_DELAY);
 
-	xSemaphoreGive(uartMutexHandle);
+    xSemaphoreGive(uartMutexHandle);
 }
 /* USER CODE END 0 */
 

@@ -15,9 +15,9 @@ extern TIM_HandleTypeDef htim4;
  * Enum for leg state detection
  */
 typedef enum LEG_STATE {
-	UP = 0,
-	DOWN = 1,
-	UNKNOWN = 2
+    UP = 0,
+    DOWN = 1,
+    UNKNOWN = 2
 }LEG_STATE;
 
 void PWM_set_pulse(uint8_t pwm_pin, float pulse);
