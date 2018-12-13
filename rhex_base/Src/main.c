@@ -154,56 +154,46 @@ void Main_Thread(void *pvParameters) {
             HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
             osDelay(500);
             HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-            osDelay(500);
 
             switch (command_byte) {
                 case 1:                         // forward
                     go_fwd();
-                    set_states(leg_states_walk_1, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_1);
 
                     go_fwd();
-                    set_states(leg_states_walk_2, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_2);
 
                     break;
 
                 case 2:                         // backward
                     go_bckw();
-                    set_states(leg_states_walk_1, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_1);
 
                     go_bckw();
-                    set_states(leg_states_walk_2, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_2);
 
                     break;
 
                 case 3:                         // left
                     go_left();
-                    set_states(leg_states_walk_1, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_1);
 
 
                     go_left();
-                    set_states(leg_states_walk_2, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_2);
                     break;
 
                 case 4:                         // right
                     go_right();
-                    set_states(leg_states_walk_1, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_1);
 
                     go_right();
-                    set_states(leg_states_walk_2, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_walk_2);
                     break;
 
                 case 5:                         // stop
                     go_fwd();
-                    set_states(leg_states_stop, desired_states);
-                    wait_for_state(motor_states, desired_states);
+                    wait_for_state(motor_states, leg_states_stop);
                     break;
             }
 
@@ -215,9 +205,12 @@ void Main_Thread(void *pvParameters) {
 }
 
 void Uart_Thread(void *pvParameters) {
-    xSemaphoreTake(uartMutexHandle, portMAX_DELAY);
-
-    xSemaphoreGive(uartMutexHandle);
+    while(1) {
+        osDelay(500);
+    }
+    //xSemaphoreTake(uartMutexHandle, portMAX_DELAY);
+    // do uart handling here
+    //xSemaphoreGive(uartMutexHandle);
 }
 /* USER CODE END 0 */
 
