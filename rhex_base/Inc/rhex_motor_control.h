@@ -15,9 +15,9 @@ extern TIM_HandleTypeDef htim4;
  * Enum for leg state detection
  */
 typedef enum LEG_STATE {
-	UP = 0,
-	DOWN = 1,
-	UNKNOWN = 2
+    UP = 0,
+    DOWN = 1,
+    UNKNOWN = 2
 }LEG_STATE;
 
 void PWM_set_pulse(uint8_t pwm_pin, float pulse);
@@ -32,6 +32,9 @@ LEG_STATE get_motor_state(uint32_t hal_upper, uint32_t hal_lower);
 void update_motors_states(LEG_STATE* motors);
 void set_states(LEG_STATE* src, LEG_STATE* dest);
 void wait_for_state(LEG_STATE* motors, LEG_STATE* states);
-void all_fwd();
+void go_fwd();
+void go_bckw();
+void go_left();
+void go_right();
 
 #endif // RHEX_MOTOR_CONTROL_H
