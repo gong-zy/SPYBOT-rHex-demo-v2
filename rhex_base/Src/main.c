@@ -65,6 +65,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+#define HALL_FEEDBACK_ENABLE 1
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -173,6 +175,8 @@ void Main_Thread(void *pvParameters) {
 					PWM_set_pulse(4, MOTOR_SPEED_BCK_MAX);
 					PWM_set_pulse(5, MOTOR_SPEED_BCK_MAX);
 
+#if (HALL_FEEDBACK_ENABLE)
+
                     set_states(leg_states_walk_1, desired_states);
                     wait_for_state(motor_states, desired_states);
 
@@ -185,6 +189,8 @@ void Main_Thread(void *pvParameters) {
 
                     set_states(leg_states_walk_2, desired_states);
                     wait_for_state(motor_states, desired_states);
+
+#endif
 
 					break;
 

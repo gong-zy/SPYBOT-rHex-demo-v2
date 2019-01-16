@@ -1,6 +1,7 @@
 
 #include <rhex_motor_control.h>
 
+
 /*
  * Brief: Sets pulse with of a specified PWM channel
  * @pwm_pin: the number of pin
